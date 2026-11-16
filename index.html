@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IRONFORGE — фітнес-клуб</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="bar"><span class="logo">IRON<b>FORGE</b></span>
+<nav id="nav"><a href="#home">Головна</a><a href="#trainers">Тренери</a><a href="#plans">Абонементи</a><a href="#apply">Запис</a><a href="#shop">Магазин</a><a href="#admin" id="admLink" style="display:none">Адмін</a><button id="userBtn">Увійти</button><button id="cartBtn">🛒 Кошик<span class="cnt" id="cc">0</span></button></nav></div></header>
+<main>
+
+<section class="view" id="v-home">
+<div class="hero"><small>Ласкаво просимо до клубу IRONFORGE</small><h1>WORK HARD EVERYDAY</h1>
+<a class="btn" href="#apply">Записатися на тренування</a> <a class="btn o" href="#shop">Спортивне харчування</a></div>
+<div class="tiles" id="tiles"></div>
+<div class="split"><div class="circle"><img id="heroImg" alt="Тренер"></div>
+<div><h2 style="margin-top:0">Improve <em>yourself</em> everyday</h2>
+<p class="mu">Сучасний зал, групові програми та кардіозона. Кожен тренер клубу має профільну освіту й сертифікати, складає індивідуальний план під вашу ціль — від схуднення до підготовки до змагань. Перше заняття — безкоштовна консультація.</p>
+<a class="btn" href="#trainers">Наші тренери</a></div></div>
+<div class="stats"><div class="box stat"><b>12 років</b>на ринку</div><div class="box stat"><b>4 тренери</b>з сертифікатами</div><div class="box stat"><b>12 програм</b>тренувань</div><div class="box stat"><b>06–23</b>щодня</div></div>
+<h2>Контакти</h2><div class="box">📍 м. Київ, вул. Спортивна, 15 · 📞 +380 44 000 00 00 · ✉️ info@ironforge.example</div>
+</section>
+
+<section class="view" id="v-trainers"><h2>Наші <em>тренери</em></h2><div class="grid" id="tgrid"></div></section>
+
+<section class="view" id="v-apply"><h2>Заявка на <em>тренування</em></h2><div id="okMsg"></div>
+<div class="box" style="max-width:640px"><div class="f2">
+<div class="w"><label for="an">Ім’я та прізвище *</label><input id="an"><div class="err" id="e-an"></div></div>
+<div><label for="ap">Телефон *</label><input id="ap" type="tel" placeholder="+380..."><div class="err" id="e-ap"></div></div>
+<div><label for="ad">Бажана дата *</label><input id="ad" type="date"><div class="err" id="e-ad"></div></div>
+<div><label for="at">Тренер *</label><select id="at"></select></div>
+<div><label for="aw">Тренування *</label><select id="aw"></select></div>
+<div class="w"><label for="ag">Ваша мета</label><select id="ag"><option>Схуднення</option><option>Набір м’язової маси</option><option>Сила та витривалість</option><option>Гнучкість і здоров’я</option><option>Підготовка до змагань</option></select></div>
+<div class="w"><label for="ac">Коментар</label><textarea id="ac"></textarea></div>
+<div class="w"><button class="btn" id="asend">Надіслати заявку</button></div></div></div>
+<h2>Мої <em>заявки</em></h2><div class="box tw"><table><thead><tr><th>Ім’я</th><th>Тренер</th><th>Тренування</th><th>Дата</th></tr></thead><tbody id="alist"></tbody></table></div>
+</section>
+
+<section class="view" id="v-plans"><h2>Абонементи та <em>тарифи</em></h2>
+<div class="pp" id="perBtns"></div><div class="grid" id="plgrid"></div>
+<h2>Пакети <em>персональних</em> тренувань</h2><div class="grid" id="pkgrid"></div>
+<h2>Вартість <em>тренувань</em></h2>
+<div class="flt"><div><label for="pf-c">Тип тренування</label><select id="pf-c"><option value="">Усі типи</option><option>Силові тренування</option><option>Групові заняття</option><option>Кардіотренування</option></select></div><div><label for="pf-t">Тренер</label><select id="pf-t"></select></div><div><label for="pf-min">Вартість від, грн</label><input id="pf-min" type="number" min="0"></div><div><label for="pf-max">Вартість до, грн</label><input id="pf-max" type="number" min="0"></div><div><label for="pf-s">Сортування</label><select id="pf-s"><option value="">За замовчуванням</option><option value="pa">Ціна: від дешевих</option><option value="pd">Ціна: від дорогих</option><option value="t">Тренер: А–Я</option><option value="n">Назва: А–Я</option><option value="c">Тип тренування</option></select></div><div style="align-self:end"><button class="btn o sm" id="pf-reset" style="width:100%;padding:10px">Скинути</button></div></div><p class="mu" id="pcount"></p><div class="box tw"><table><thead><tr><th>Тренування</th><th>Тренер</th><th>Розклад</th><th>Тривалість</th><th>Вартість</th><th></th></tr></thead><tbody id="ptbl"></tbody></table></div>
+<p class="mu">Перше пробне заняття безкоштовне. Студентам і пенсіонерам — знижка 10% на абонемент. Ціни наведені в гривнях і є орієнтовними.</p></section>
+
+<section class="view" id="v-admin"><h2>Адмін-<em>панель</em></h2><div id="adm"></div></section>
+
+<section class="view" id="v-account"><h2>Мій <em>кабінет</em></h2><div id="acc"></div></section>
+
+<section class="view" id="v-shop"><h2>Спортивне <em>харчування</em></h2>
+<div class="flt"><input id="sq" placeholder="Пошук товару"><select id="sc"></select></div>
+<div class="grid" id="pgrid"></div></section>
+</main>
+<footer>© IRONFORGE. Навчальний проєкт. Харчові добавки не є лікарськими засобами — проконсультуйтеся з лікарем.</footer>
+
+<button class="btn fab" data-mgr="1">💬 Менеджер</button>
+<dialog id="dlg"><div id="dbody"></div><div style="text-align:right;margin-top:12px"><button class="btn o sm" id="dclose">Закрити</button></div></dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
